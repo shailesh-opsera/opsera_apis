@@ -3,3 +3,6 @@ variables:
   - name: baseUrl_publicApi
     value: https://api.opsera-uat.opsera.io
     description: public api uat base url
+  - secret: true
+    name: token
+    description: public api brarer token - UAT

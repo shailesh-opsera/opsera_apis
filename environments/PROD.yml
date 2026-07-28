@@ -3,3 +3,6 @@ variables:
   - name: baseUrl_publicApi
     value: https://app.opsera.io
     description: public api prod base url
+  - secret: true
+    name: token
+    description: public api bearer token - prod
