@@ -1,1 +1,5 @@
 name: UAT
+variables:
+  - name: baseUrl_publicApi
+    value: https://api.opsera-uat.opsera.io
+    description: public api uat base url

@@ -1,1 +1,5 @@
 name: PROD
+variables:
+  - name: baseUrl_publicApi
+    value: https://app.opsera.io
+    description: public api prod base url

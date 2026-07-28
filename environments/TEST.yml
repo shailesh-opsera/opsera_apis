@@ -1,1 +1,5 @@
 name: TEST
+variables:
+  - name: baseUrl_publicApi
+    value: https://api.opsera-test.opsera.io
+    description: public api test base url
