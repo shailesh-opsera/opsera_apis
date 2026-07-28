@@ -1,0 +1,16 @@
+meta {
+  name: Get Groups
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/groups
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~search: dev
+  ~id: developers-team,qa-team
+}

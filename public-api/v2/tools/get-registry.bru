@@ -1,0 +1,16 @@
+meta {
+  name: Get Registry
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/tools/registry
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~tool_identifier: github
+  ~fields: _id,name,tool_identifier
+}

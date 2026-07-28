@@ -1,0 +1,11 @@
+meta {
+  name: Get Project By ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/data/project/<projectId>
+  body: none
+  auth: inherit
+}

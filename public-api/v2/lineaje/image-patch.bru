@@ -1,0 +1,20 @@
+meta {
+  name: Image Patch
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/lineaje/image/patch
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "image": "",
+    "registry": "",
+    "tag": "",
+    "scannerType": "trivy"
+  }
+}

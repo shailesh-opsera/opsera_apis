@@ -1,0 +1,18 @@
+meta {
+  name: Update Registry Tool
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/registry/update
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "toolId": "",
+    "tool": {}
+  }
+}

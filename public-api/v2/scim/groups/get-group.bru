@@ -1,0 +1,11 @@
+meta {
+  name: Get Group
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/scim/v2/Groups/<groupId>
+  body: none
+  auth: inherit
+}

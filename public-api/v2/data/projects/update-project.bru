@@ -1,0 +1,25 @@
+meta {
+  name: Update Project
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl_publicApi}}/api/v2/data/project/<projectId>
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "organization": "Opsera",
+    "business": "Engineering",
+    "department": "Platform",
+    "group": "Development",
+    "team": "Backend Team"
+  }
+}

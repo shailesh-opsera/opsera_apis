@@ -1,0 +1,17 @@
+meta {
+  name: Run Pipeline
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/pipeline/run
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "pipelineId": ""
+  }
+}

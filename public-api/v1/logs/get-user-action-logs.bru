@@ -1,0 +1,19 @@
+meta {
+  name: Get User Action Logs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v1/logs/user/actions
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~type: 
+  ~date: 2026-01-01
+  ~start: 2026-01-01
+  ~end: 2026-01-31
+  ~range: 7d
+}

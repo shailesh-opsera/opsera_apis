@@ -1,0 +1,17 @@
+meta {
+  name: Get Task By ID
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/tasks/summary
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "taskId": ""
+  }
+}

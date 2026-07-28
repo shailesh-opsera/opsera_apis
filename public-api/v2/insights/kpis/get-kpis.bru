@@ -1,0 +1,15 @@
+meta {
+  name: Get KPIs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~category: dev-ex
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Get Registry Tool By ID
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/registry/summary
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "toolId": ""
+  }
+}

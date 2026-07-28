@@ -1,0 +1,21 @@
+meta {
+  name: Search
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/search
+  body: none
+  auth: inherit
+}
+
+params:query {
+  t: pipeline
+  ~s:
+  ~regex:
+  ~count: 100
+  ~field:
+  ~c:
+  ~m:
+}

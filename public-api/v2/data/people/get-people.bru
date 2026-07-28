@@ -1,0 +1,11 @@
+meta {
+  name: Get People
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/data/people
+  body: none
+  auth: inherit
+}

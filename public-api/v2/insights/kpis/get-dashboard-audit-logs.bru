@@ -1,0 +1,11 @@
+meta {
+  name: Get Dashboard Audit Logs
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/audit-logs/dashboard/<dashboardId>
+  body: none
+  auth: inherit
+}

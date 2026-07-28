@@ -1,0 +1,21 @@
+meta {
+  name: Get Task Status
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/tasks/status
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": "<taskId>"
+  }
+}

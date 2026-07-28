@@ -1,0 +1,11 @@
+meta {
+  name: Recently Viewed Dashboards
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/audit-logs/dashboard/recently-viewed
+  body: none
+  auth: inherit
+}

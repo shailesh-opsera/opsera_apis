@@ -1,0 +1,19 @@
+meta {
+  name: Tasks Created
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/reports/tasks/created
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~start_date:
+  ~end_date:
+  ~period: last_30days
+  ~group_by: none
+  ~include_data: false
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Pipeline Source
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/settings/pipeline/source
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "action": "update-source",
+    "targetPipelines": [
+      ""
+    ],
+    "targetTools": [
+      ""
+    ],
+    "settings": {}
+  }
+}

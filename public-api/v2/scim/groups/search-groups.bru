@@ -1,0 +1,23 @@
+meta {
+  name: Search Groups
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/scim/v2/Groups/.search
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/scim+json
+}
+
+body:json {
+  {
+    "filter": "displayName eq \"developers\"",
+    "startIndex": 1,
+    "count": 100
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get KPI Filters
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/filters
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~kpis: kpi-uuid-1,kpi-uuid-2
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Get Pipeline Run By Count
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/pipelines/<pipelineId>/runs/<runCount>
+  body: none
+  auth: inherit
+}

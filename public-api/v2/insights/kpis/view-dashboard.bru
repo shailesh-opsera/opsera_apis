@@ -1,0 +1,11 @@
+meta {
+  name: View Dashboard
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/audit-logs/dashboard/<dashboardId>/view
+  body: none
+  auth: inherit
+}

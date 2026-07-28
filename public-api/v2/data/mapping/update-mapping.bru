@@ -1,0 +1,22 @@
+meta {
+  name: Update Mapping
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl_publicApi}}/api/v2/data/mapping/<id>
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "attribute1": "",
+    "attribute2": "",
+    "attributes": {
+      "parentType": "",
+      "childType": ""
+    }
+  }
+}

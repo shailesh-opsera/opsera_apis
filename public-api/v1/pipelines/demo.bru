@@ -1,0 +1,17 @@
+meta {
+  name: Demo
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/pipeline/demo
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "pipelineId": ""
+  }
+}

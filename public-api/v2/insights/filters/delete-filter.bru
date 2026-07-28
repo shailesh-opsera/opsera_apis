@@ -1,0 +1,21 @@
+meta {
+  name: Delete Filter
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl_publicApi}}/api/v2/insights/filters/<filterId>
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "mappingId": "<mappingId>"
+  }
+}

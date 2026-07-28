@@ -1,0 +1,11 @@
+meta {
+  name: Get KPI Audit Log By Mapping
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/audit-logs/mapping/<mappingId>
+  body: none
+  auth: inherit
+}

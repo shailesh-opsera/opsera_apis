@@ -1,0 +1,22 @@
+meta {
+  name: Add Group Members
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/group/<groupName>/members
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    "user.name@company.com",
+    "another.user@company.com"
+  ]
+}

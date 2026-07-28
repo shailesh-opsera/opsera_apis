@@ -1,0 +1,15 @@
+meta {
+  name: Get User by Email Search
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/user
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: email=user.name@company.com
+}

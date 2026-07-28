@@ -1,0 +1,31 @@
+meta {
+  name: Generate Package XML
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/salesforce/generate/package-xml
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "components": [
+      {
+        "type": "ApexClass",
+        "members": ["AccountController", "ContactHandler"]
+      },
+      {
+        "type": "ApexTrigger",
+        "members": ["AccountTrigger"]
+      }
+    ],
+    "apiVersion": "59.0"
+  }
+}

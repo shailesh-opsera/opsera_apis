@@ -1,0 +1,11 @@
+meta {
+  name: Delete Group
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/group/<groupName>
+  body: none
+  auth: inherit
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Create Group
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/scim/v2/Groups
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/scim+json
+}
+
+body:json {
+  {
+    "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+    "displayName": "developers",
+    "members": [
+      {
+        "value": "64d7c869b5760b001e46c1a2"
+      }
+    ]
+  }
+}

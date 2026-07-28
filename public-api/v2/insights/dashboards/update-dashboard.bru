@@ -1,0 +1,38 @@
+meta {
+  name: Update Dashboard
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl_publicApi}}/api/v2/insights/dashboards/<id>
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "kpis": [
+      "lead_time_for_changes",
+      "deployment_frequency",
+      "change_failure_rate"
+    ],
+    "filters": {
+      "groups": ["team-alpha", "team-beta"],
+      "level_1": ["bug", "feature"],
+      "tools": {
+        "github": ["main-app"],
+        "jira": ["PROJ-123"]
+      },
+      "jiraProjectFilter": ["PROJ-123"],
+      "repoFilter": ["main-app"]
+    },
+    "fromDate": "2025-01-01T00:00:00.000Z",
+    "toDate": "2025-03-31T23:59:59.999Z",
+    "rollingDays": 0
+  }
+}

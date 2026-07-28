@@ -1,0 +1,19 @@
+meta {
+  name: Get Pipeline Logs
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v1/pipeline/logs
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "pipelineId": "",
+    "runCount": 1,
+    "type": ""
+  }
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Get Pipeline Parameters
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/parameters/pipeline/<pipelineId>
+  body: none
+  auth: inherit
+}

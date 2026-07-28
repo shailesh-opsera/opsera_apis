@@ -1,0 +1,17 @@
+meta {
+  name: Get Users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/scim/v2/Users
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~filter: userName eq "user@example.com"
+  ~startIndex: 1
+  ~count: 100
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Get Filter
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/filters/<groupId>/<filterId>
+  body: none
+  auth: inherit
+}

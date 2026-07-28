@@ -1,0 +1,24 @@
+meta {
+  name: Update Parameter
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl_publicApi}}/api/v2/parameters/<parameterId>
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "DEPLOY_ENV",
+    "value": "staging",
+    "type": "string",
+    "description": "Target deployment environment - updated to staging"
+  }
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Get Users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/users
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~search: email=*@company.com
+  ~id: 507f1f77bcf86cd799439011,507f1f77bcf86cd799439012
+}

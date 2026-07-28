@@ -1,0 +1,11 @@
+meta {
+  name: Get Operation Status
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/tool-mappings/operation/<operationId>/status
+  body: none
+  auth: inherit
+}

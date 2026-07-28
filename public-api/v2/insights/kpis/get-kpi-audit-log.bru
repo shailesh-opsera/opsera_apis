@@ -1,0 +1,11 @@
+meta {
+  name: Get KPI Audit Log
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl_publicApi}}/api/v2/insights/kpis/audit-logs/<id>
+  body: none
+  auth: inherit
+}

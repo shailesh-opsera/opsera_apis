@@ -1,0 +1,21 @@
+meta {
+  name: Get Task
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/task
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": "<taskId>"
+  }
+}

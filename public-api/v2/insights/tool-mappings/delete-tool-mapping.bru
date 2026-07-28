@@ -1,0 +1,11 @@
+meta {
+  name: Delete Tool Mapping
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl_publicApi}}/api/v2/insights/tool-mappings/<mappingId>
+  body: none
+  auth: inherit
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Delete Dashboard
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl_publicApi}}/api/v2/insights/dashboards/<id>
+  body: none
+  auth: inherit
+}

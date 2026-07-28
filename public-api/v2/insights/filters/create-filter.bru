@@ -1,0 +1,30 @@
+meta {
+  name: Create Filter
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/insights/filters
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "mappingId": "<mappingId>",
+    "tool": "github",
+    "name": "repository_filter",
+    "values": ["repo1", "repo2"],
+    "kpis": ["kpi-uuid-1"],
+    "custom_fieldName": "custom_repo_field",
+    "labels": ["production"],
+    "source": "user",
+    "active": true,
+    "sort_number": 1
+  }
+}

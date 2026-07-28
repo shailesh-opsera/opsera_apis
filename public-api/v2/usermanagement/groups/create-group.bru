@@ -1,0 +1,22 @@
+meta {
+  name: Create Group
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/group
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "groupName": "developers-team",
+    "groupMemberUserIds": ["507f1f77bcf86cd799439011", "507f1f77bcf86cd799439012"]
+  }
+}

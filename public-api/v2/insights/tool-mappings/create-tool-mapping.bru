@@ -1,0 +1,36 @@
+meta {
+  name: Create Tool Mapping
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/insights/tool-mappings
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "level_1": "Organization",
+    "level_2": "Department",
+    "level_3": "Team",
+    "level_4": "",
+    "level_5": "",
+    "filtersData": [
+      {
+        "name": "repository_filter",
+        "tool": "github",
+        "values": ["repo1", "repo2"],
+        "kpis": ["kpi-uuid-1"],
+        "customFieldName": "custom_repo_field",
+        "securityToolNames": [],
+        "securityStepId": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Update User Site Role
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl_publicApi}}/api/v2/usermanagement/user/site-role
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "userId": "507f1f77bcf86cd799439011",
+    "siteRole": "PowerUsers"
+  }
+}

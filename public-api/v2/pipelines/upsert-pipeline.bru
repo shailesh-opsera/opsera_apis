@@ -1,0 +1,53 @@
+meta {
+  name: Upsert Pipeline
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/pipelines/upsert
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Validated CI/CD Pipeline",
+    "description": "Pipeline with validated step configurations",
+    "type": ["ci-cd"],
+    "workflow": {
+      "plan": [
+        {
+          "name": "Build Step",
+          "tool": {
+            "tool_identifier": "jenkins",
+            "configuration": {
+              "jobName": "my-build-job",
+              "buildType": "gradle"
+            }
+          },
+          "active": true,
+          "dependencies": []
+        },
+        {
+          "name": "Test Step",
+          "tool": {
+            "tool_identifier": "jenkins",
+            "configuration": {
+              "jobName": "my-test-job",
+              "buildType": "maven"
+            }
+          },
+          "active": true,
+          "dependencies": ["Build Step"]
+        }
+      ]
+    },
+    "tags": ["validated", "ci-cd"],
+    "metadata": {}
+  }
+}

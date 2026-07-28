@@ -1,0 +1,24 @@
+meta {
+  name: Registry Configurations
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl_publicApi}}/api/v2/settings/registry/configurations
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "action": "update-configurations",
+    "targetRegistries": [
+      ""
+    ],
+    "targetTools": [
+      "jenkins"
+    ],
+    "settings": {}
+  }
+}
