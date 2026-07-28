@@ -1,0 +1,15 @@
+info:
+  name: Get Pipeline Run By Count
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/pipelines/<pipelineId>/runs/<runCount>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

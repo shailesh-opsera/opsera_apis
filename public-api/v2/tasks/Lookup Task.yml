@@ -1,0 +1,24 @@
+info:
+  name: Lookup Task
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/tasks/lookup"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "id": "<taskId>"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

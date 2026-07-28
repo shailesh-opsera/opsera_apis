@@ -1,0 +1,36 @@
+info:
+  name: Get Groups
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Groups"
+  params:
+    - name: filter
+      value: displayName eq "developers"
+      type: query
+      disabled: true
+    - name: sortBy
+      value: displayName
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: ascending
+      type: query
+      disabled: true
+    - name: startIndex
+      value: 1
+      type: query
+      disabled: true
+    - name: count
+      value: 100
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

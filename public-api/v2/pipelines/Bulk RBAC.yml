@@ -1,0 +1,32 @@
+info:
+  name: Bulk RBAC
+  type: http
+  seq: 7
+
+http:
+  method: PATCH
+  url: "{{baseUrl_publicApi}}/api/v2/pipelines/bulk-rbac"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "pipelineIds": ["<pipelineId>"],
+          "roles": [
+            {
+              "role": "administrator",
+              "user": "admin@example.com",
+              "group": null
+            }
+          ],
+          "overwriteRoles": true
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

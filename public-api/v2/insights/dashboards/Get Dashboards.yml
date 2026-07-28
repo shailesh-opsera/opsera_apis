@@ -1,0 +1,28 @@
+info:
+  name: Get Dashboards
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/insights/dashboards"
+  params:
+    - name: limit
+      value: 25
+      type: query
+      disabled: true
+    - name: search
+      value: DORA metrics
+      type: query
+      disabled: true
+    - name: categories
+      value: dora,dev-ex
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

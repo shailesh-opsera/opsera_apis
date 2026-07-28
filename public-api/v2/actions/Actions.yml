@@ -1,0 +1,29 @@
+info:
+  name: Actions
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/actions"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "action": "status",
+          "type": "pipeline",
+          "version": 1,
+          "target": [
+            ""
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

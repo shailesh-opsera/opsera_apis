@@ -1,0 +1,31 @@
+info:
+  name: Patch User
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Users/<userId>"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+          "Operations": [
+            {
+              "op": "replace",
+              "path": "active",
+              "value": "false"
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

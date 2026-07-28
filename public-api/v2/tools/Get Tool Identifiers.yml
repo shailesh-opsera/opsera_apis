@@ -1,0 +1,40 @@
+info:
+  name: Get Tool Identifiers
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/tools/identifiers"
+  params:
+    - name: status
+      value: active
+      type: query
+      disabled: true
+    - name: type
+      value: ""
+      type: query
+      disabled: true
+    - name: usage
+      value: ""
+      type: query
+      disabled: true
+    - name: enabledInToolRegistry
+      value: ""
+      type: query
+      disabled: true
+    - name: search
+      value: ""
+      type: query
+      disabled: true
+    - name: fields
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

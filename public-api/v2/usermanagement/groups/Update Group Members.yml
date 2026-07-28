@@ -1,0 +1,25 @@
+info:
+  name: Update Group Members
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/usermanagement/group/<groupName>/members"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      [
+          "user.one@company.com",
+          "user.two@company.com"
+        ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

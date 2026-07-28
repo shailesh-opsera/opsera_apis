@@ -1,0 +1,15 @@
+info:
+  name: Delete User
+  type: http
+  seq: 7
+
+http:
+  method: DELETE
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Users/<userId>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

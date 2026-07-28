@@ -1,0 +1,33 @@
+info:
+  name: Update Filter
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/insights/filters/<filterId>"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "mappingId": "<mappingId>",
+          "tool": "github",
+          "name": "repository_filter",
+          "values": ["repo1", "repo2", "repo3"],
+          "kpis": ["kpi-uuid-1", "kpi-uuid-2"],
+          "custom_fieldName": "custom_repo_field",
+          "labels": ["production", "critical"],
+          "source": "user",
+          "active": true,
+          "sort_number": 1
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

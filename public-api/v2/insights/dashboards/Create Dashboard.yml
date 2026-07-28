@@ -1,0 +1,42 @@
+info:
+  name: Create Dashboard
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/insights/dashboards"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "displayName": "DORA Metrics Dashboard",
+          "description": "Comprehensive DORA metrics tracking",
+          "categories": "dora,metrics",
+          "kpis": [
+            "lead_time_for_changes",
+            "deployment_frequency"
+          ],
+          "userDiscoverable": true,
+          "filters": {
+            "groups": ["team-alpha"],
+            "level_1": ["bug", "feature"],
+            "tools": {
+              "github": ["main-app"],
+              "jira": ["PROJ-123"]
+            },
+            "jiraProjectFilter": ["PROJ-123"],
+            "repoFilter": ["main-app"]
+          },
+          "rollingDays": 90
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

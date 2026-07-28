@@ -1,0 +1,39 @@
+info:
+  name: Update Tool Mapping
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/insights/tool-mappings/<mappingId>"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "level_1": "Organization",
+          "level_2": "Department",
+          "level_3": "Updated Team",
+          "level_4": "",
+          "level_5": "",
+          "filtersData": [
+            {
+              "name": "repository_filter",
+              "tool": "github",
+              "values": ["repo1", "repo2", "repo3"],
+              "kpis": ["kpi-uuid-1"],
+              "customFieldName": "custom_repo_field",
+              "securityToolNames": [],
+              "securityStepId": ""
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

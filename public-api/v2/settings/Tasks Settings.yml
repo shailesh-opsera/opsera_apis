@@ -1,0 +1,27 @@
+info:
+  name: Tasks Settings
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/settings/tasks"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "target": [
+            ""
+          ],
+          "settings": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

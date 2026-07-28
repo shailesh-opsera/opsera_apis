@@ -1,0 +1,33 @@
+info:
+  name: Replace Group
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Groups/<groupId>"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+          "displayName": "developers",
+          "members": [
+            {
+              "value": "64d7c869b5760b001e46c1a2"
+            },
+            {
+              "value": "64d7c869b5760b001e46c1a3"
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

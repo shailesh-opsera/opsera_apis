@@ -1,0 +1,27 @@
+info:
+  name: Create Registry Tool
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v1/registry/create"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "account": "",
+          "name": "",
+          "tool_identifier": "",
+          "tool_type_identifier": ""
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

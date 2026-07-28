@@ -1,0 +1,24 @@
+info:
+  name: Get Task Status
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v1/tasks/status"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "taskId": ""
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,60 @@
+info:
+  name: Get NPI Console Report
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/insights/npi-console-report"
+  params:
+    - name: fromDate
+      value: 2025-10-01
+      type: query
+      disabled: true
+    - name: toDate
+      value: 2025-12-31
+      type: query
+      disabled: true
+    - name: orgName
+      value: hon-hce
+      type: query
+      disabled: true
+    - name: SBG
+      value: HCE
+      type: query
+      disabled: true
+    - name: sbg
+      value: HCE
+      type: query
+      disabled: true
+    - name: GBE
+      value: GBE-Example
+      type: query
+      disabled: true
+    - name: gbe
+      value: GBE-Example
+      type: query
+      disabled: true
+    - name: Offering
+      value: Offering-Example
+      type: query
+      disabled: true
+    - name: offering
+      value: Offering-Example
+      type: query
+      disabled: true
+    - name: Unity
+      value: Unity-Example
+      type: query
+      disabled: true
+    - name: unity
+      value: Unity-Example
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

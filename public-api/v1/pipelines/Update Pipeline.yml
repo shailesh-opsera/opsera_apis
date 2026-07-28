@@ -1,0 +1,25 @@
+info:
+  name: Update Pipeline
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v1/pipeline/update"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "pipelineId": "",
+          "pipeline": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,35 @@
+info:
+  name: Update Package XML
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/salesforce/update-package-xml"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "packageXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Package xmlns=\"http://soap.sforce.com/2006/04/metadata\">\n  <types>\n    <members>AccountController</members>\n    <name>ApexClass</name>\n  </types>\n  <version>59.0</version>\n</Package>",
+          "components": [
+            {
+              "type": "ApexClass",
+              "members": ["NewController"]
+            },
+            {
+              "type": "ApexTrigger",
+              "members": ["AccountTrigger"]
+            }
+          ],
+          "apiVersion": "60.0"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

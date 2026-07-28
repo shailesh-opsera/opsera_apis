@@ -1,0 +1,26 @@
+info:
+  name: Pipeline Demo
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/settings/pipeline/demo"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "targetPipelines": [
+            ""
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

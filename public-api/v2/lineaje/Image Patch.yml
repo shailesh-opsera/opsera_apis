@@ -1,0 +1,27 @@
+info:
+  name: Image Patch
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/lineaje/image/patch"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "image": "",
+          "registry": "",
+          "tag": "",
+          "scannerType": "trivy"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,28 @@
+info:
+  name: Update Project
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/data/project/<projectId>"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "organization": "Opsera",
+          "business": "Engineering",
+          "department": "Platform",
+          "group": "Development",
+          "team": "Backend Team"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

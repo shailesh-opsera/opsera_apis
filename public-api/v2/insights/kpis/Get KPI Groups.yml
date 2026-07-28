@@ -1,0 +1,28 @@
+info:
+  name: Get KPI Groups
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/insights/kpis/groups"
+  params:
+    - name: page
+      value: 0
+      type: query
+      disabled: true
+    - name: size
+      value: 25
+      type: query
+      disabled: true
+    - name: sort
+      value: name,asc
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

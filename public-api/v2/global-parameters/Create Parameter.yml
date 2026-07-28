@@ -1,0 +1,40 @@
+info:
+  name: Create Parameter
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/global-parameters/create"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "opsera-global-parameter-example",
+          "value": "my-parameter-value",
+          "scope": "",
+          "parentId": "",
+          "active": true,
+          "vaultEnabled": false,
+          "vaultKey": "",
+          "selectField": false,
+          "lookupListId": "",
+          "roles": [
+            {
+              "role": "administrator",
+              "user": "admin@example.com",
+              "group": null
+            }
+          ],
+          "tags": []
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

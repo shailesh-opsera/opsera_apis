@@ -1,0 +1,31 @@
+info:
+  name: Get Task Logs By ID
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v1/logs/task"
+  params:
+    - name: taskId
+      value: ""
+      type: query
+    - name: runCount
+      value: 1
+      type: query
+      disabled: true
+    - name: page
+      value: 1
+      type: query
+      disabled: true
+    - name: count
+      value: 1000
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

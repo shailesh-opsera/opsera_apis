@@ -1,0 +1,38 @@
+info:
+  name: Create Pipeline
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v1/pipeline/create"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "",
+          "workflow": {
+            "plan": [
+              {
+                "name": "",
+                "description": "",
+                "active": true,
+                "trigger": [],
+                "type": [],
+                "notification": []
+              }
+            ]
+          },
+          "roles": [],
+          "tags": []
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: Create Mapping
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/data/mapping"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "attribute1": "",
+          "attribute2": "",
+          "mappingType": "project-people",
+          "relationship": "many-to-many",
+          "attributes": {
+            "parentType": "",
+            "childType": ""
+          }
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

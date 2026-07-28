@@ -1,0 +1,31 @@
+info:
+  name: Update Parameter
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/global-parameters/<customParameterId>/update"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "value": "new-updated-value",
+          "roles": [
+            {
+              "role": "administrator",
+              "user": "admin@example.com",
+              "group": null
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

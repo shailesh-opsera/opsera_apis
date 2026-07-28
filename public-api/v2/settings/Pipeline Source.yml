@@ -1,0 +1,31 @@
+info:
+  name: Pipeline Source
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/settings/pipeline/source"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "action": "update-source",
+          "targetPipelines": [
+            ""
+          ],
+          "targetTools": [
+            ""
+          ],
+          "settings": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,42 @@
+info:
+  name: Replace User
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Users/<userId>"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
+          "name": {
+            "givenName": "John",
+            "familyName": "Doe"
+          },
+          "emails": [
+            {
+              "value": "john.doe@example.com",
+              "type": "work",
+              "primary": true
+            }
+          ],
+          "active": true,
+          "roles": [
+            {
+              "value": "powerUser",
+              "primary": true
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,46 @@
+info:
+  name: Create Project
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/data/project"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "projectId": "proj-123456",
+          "projectName": "New Web Application",
+          "projectOwner": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane.smith@opsera.io"
+          },
+          "externalId": "abc123-def456-ghi789",
+          "organization": "Opsera",
+          "business": "Engineering",
+          "department": "Platform",
+          "group": "Development",
+          "team": "Backend Team",
+          "assets": {
+            "repositories": [
+              {
+                "name": "api-service",
+                "platform": "github.com",
+                "url": "https://github.com/Opsera/api-service.git"
+              }
+            ],
+            "services": []
+          }
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

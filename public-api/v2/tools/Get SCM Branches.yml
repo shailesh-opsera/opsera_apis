@@ -1,0 +1,28 @@
+info:
+  name: Get SCM Branches
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/tools/scm/branches"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "tool_id": "<toolId>",
+          "service": "github",
+          "repository": "myorg/my-node-api",
+          "workspace": "my-workspace",
+          "searchTerm": "feature"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

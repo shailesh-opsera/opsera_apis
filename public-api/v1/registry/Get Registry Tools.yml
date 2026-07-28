@@ -1,0 +1,15 @@
+info:
+  name: Get Registry Tools
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v1/registry/tools"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

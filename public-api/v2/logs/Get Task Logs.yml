@@ -1,0 +1,27 @@
+info:
+  name: Get Task Logs
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/logs/task"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "id": "<taskId>",
+          "runCount": 1,
+          "page": 1,
+          "pageSize": 100
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

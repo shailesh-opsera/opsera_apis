@@ -1,0 +1,56 @@
+info:
+  name: Validate Pipeline
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/pipelines/validate"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "Node.js API Pipeline",
+          "description": "Pipeline validation test",
+          "type": ["ci-cd"],
+          "workflow": {
+            "plan": [
+              {
+                "name": "GitHub Checkout",
+                "active": true,
+                "tool": {
+                  "tool_identifier": "github",
+                  "configuration": {
+                    "gitToolId": "507f1f77bcf86cd799439011",
+                    "repoId": "myorg/node-api",
+                    "gitBranch": "main"
+                  }
+                },
+                "dependencies": []
+              },
+              {
+                "name": "Snyk Scan",
+                "active": true,
+                "tool": {
+                  "tool_identifier": "snyk",
+                  "configuration": {
+                    "toolConfigId": "507f1f77bcf86cd799439012"
+                  }
+                },
+                "dependencies": ["GitHub Checkout"]
+              }
+            ]
+          },
+          "tags": [],
+          "metadata": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: Get Pipeline Logs
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v1/pipeline/logs"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "pipelineId": "",
+          "runCount": 1,
+          "type": ""
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

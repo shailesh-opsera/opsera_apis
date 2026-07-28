@@ -1,0 +1,27 @@
+info:
+  name: Pipeline Run
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/actions/pipeline/run"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "targetPipelines": [
+            ""
+          ],
+          "settings": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

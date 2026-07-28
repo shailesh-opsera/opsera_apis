@@ -1,0 +1,43 @@
+info:
+  name: Create User
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Users"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
+          "name": {
+            "givenName": "John",
+            "familyName": "Doe"
+          },
+          "emails": [
+            {
+              "value": "john.doe@example.com",
+              "type": "work",
+              "primary": true
+            }
+          ],
+          "active": true,
+          "roles": [
+            {
+              "value": "user",
+              "primary": true,
+              "type": "Primary"
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

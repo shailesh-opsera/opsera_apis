@@ -1,0 +1,26 @@
+info:
+  name: Search Users
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Users/.search"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "filter": "userName eq \"john.doe@example.com\"",
+          "startIndex": 1,
+          "count": 100
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

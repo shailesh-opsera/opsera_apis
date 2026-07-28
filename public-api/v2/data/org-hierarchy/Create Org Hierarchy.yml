@@ -1,0 +1,27 @@
+info:
+  name: Create Org Hierarchy
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/data/org-hierarchy"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "parent": "",
+          "child": "",
+          "parentType": "",
+          "childType": ""
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

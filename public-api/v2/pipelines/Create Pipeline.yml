@@ -1,0 +1,52 @@
+info:
+  name: Create Pipeline
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/pipelines"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "E2E Test Pipeline Creation",
+          "description": "Pipeline created via API",
+          "type": ["ci-cd"],
+          "workflow": {
+            "plan": [
+              {
+                "_id": "507f1f77bcf86cd799439011",
+                "name": "Build Step",
+                "tool": {
+                  "tool_identifier": "github",
+                  "configuration": {}
+                },
+                "active": true,
+                "dependencies": []
+              },
+              {
+                "_id": "507f1f77bcf86cd799439012",
+                "name": "Test Step",
+                "tool": {
+                  "tool_identifier": "jenkins",
+                  "configuration": {}
+                },
+                "active": true,
+                "dependencies": ["Build Step"]
+              }
+            ]
+          },
+          "tags": ["test"],
+          "metadata": {}
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

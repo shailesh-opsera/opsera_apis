@@ -1,0 +1,27 @@
+info:
+  name: Create Pipeline Parameter
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/parameters/pipeline/<pipelineId>"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "DEPLOY_ENV",
+          "value": "production",
+          "type": "string",
+          "description": "Target deployment environment"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

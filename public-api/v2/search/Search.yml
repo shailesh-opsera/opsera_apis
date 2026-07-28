@@ -1,0 +1,43 @@
+info:
+  name: Search
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl_publicApi}}/api/v2/search"
+  params:
+    - name: t
+      value: pipeline
+      type: query
+    - name: s
+      value: ""
+      type: query
+      disabled: true
+    - name: regex
+      value: ""
+      type: query
+      disabled: true
+    - name: count
+      value: 100
+      type: query
+      disabled: true
+    - name: field
+      value: ""
+      type: query
+      disabled: true
+    - name: c
+      value: ""
+      type: query
+      disabled: true
+    - name: m
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

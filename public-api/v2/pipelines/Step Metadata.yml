@@ -1,0 +1,24 @@
+info:
+  name: Step Metadata
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/pipelines/step-metadata"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "tool_identifier": "docker-push"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

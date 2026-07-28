@@ -1,0 +1,30 @@
+info:
+  name: Update Person
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl_publicApi}}/api/v2/data/people/<email>"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "firstName": "John",
+          "lastName": "Doe",
+          "organization": "Opsera",
+          "business": "Engineering",
+          "department": "Platform",
+          "group": "Phase 2",
+          "team": "AOD"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

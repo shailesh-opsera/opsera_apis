@@ -1,0 +1,35 @@
+info:
+  name: Patch Group
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{baseUrl_publicApi}}/api/v2/scim/v2/Groups/<groupId>"
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+          "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+          "Operations": [
+            {
+              "op": "add",
+              "path": "members",
+              "value": [
+                {
+                  "value": "64d7c869b5760b001e46c1a2"
+                }
+              ]
+            }
+          ]
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

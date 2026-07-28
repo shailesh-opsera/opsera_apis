@@ -1,0 +1,44 @@
+info:
+  name: SCM To SCM CSV Upload
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl_publicApi}}/api/v2/tasks/scmtoscm/csvupload"
+  headers:
+    - name: Content-Type
+      value: text/plain
+  params:
+    - name: taskId
+      value: <taskId>
+      type: query
+    - name: sourceGitToolId
+      value: <sourceGitToolId>
+      type: query
+    - name: targetGitToolId
+      value: <targetGitToolId>
+      type: query
+    - name: sourceScmType
+      value: gitlab
+      type: query
+    - name: targetScmType
+      value: github
+      type: query
+    - name: skipFailed
+      value: false
+      type: query
+      disabled: true
+  body:
+    type: text
+    data: |-
+      sourceRepoName,targetOrgName,targetRepoName
+        my-source-repo,target-org,my-target-repo
+        another-repo,target-org,migrated-repo
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

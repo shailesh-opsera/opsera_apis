@@ -1,0 +1,15 @@
+info:
+  name: Delete Tool Mapping
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl_publicApi}}/api/v2/insights/tool-mappings/<mappingId>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
